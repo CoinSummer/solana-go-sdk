@@ -1,15 +1,15 @@
 # solana-go-sdk
-[![Go](https://github.com/portto/solana-go-sdk/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/portto/solana-go-sdk/actions/workflows/go.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/portto/solana-go-sdk)](https://goreportcard.com/report/github.com/portto/solana-go-sdk)
+[![Go](https://github.com/CoinSummer/solana-go-sdk/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/CoinSummer/solana-go-sdk/actions/workflows/go.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/CoinSummer/solana-go-sdk)](https://goreportcard.com/report/github.com/CoinSummer/solana-go-sdk)
 
-Solana Golang SDK
+Solana Golang SDK   
 
 ## Getting Started
 
 ### Installing
 
 ```sh
-go get -v github.com/portto/solana-go-sdk
+go get -v github.com/CoinSummer/solana-go-sdk
 ```
 
 ### Example
@@ -23,7 +23,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/portto/solana-go-sdk/client"
+	"github.com/CoinSummer/solana-go-sdk/client"
 )
 
 func main() {
@@ -49,8 +49,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/portto/solana-go-sdk/client"
-	"github.com/portto/solana-go-sdk/types"
+	"github.com/CoinSummer/solana-go-sdk/client"
+	"github.com/CoinSummer/solana-go-sdk/types"
 )
 
 func main() {
@@ -80,10 +80,10 @@ package main
 import (
 	"log"
 
-	"github.com/portto/solana-go-sdk/client"
-	"github.com/portto/solana-go-sdk/common"
-	"github.com/portto/solana-go-sdk/sysprog"
-	"github.com/portto/solana-go-sdk/types"
+	"github.com/CoinSummer/solana-go-sdk/client"
+	"github.com/CoinSummer/solana-go-sdk/common"
+	"github.com/CoinSummer/solana-go-sdk/sysprog"
+	"github.com/CoinSummer/solana-go-sdk/types"
 )
 
 func main() {
@@ -132,10 +132,10 @@ import (
 	"crypto/ed25519"
 	"log"
 
-	"github.com/portto/solana-go-sdk/client"
-	"github.com/portto/solana-go-sdk/common"
-	"github.com/portto/solana-go-sdk/sysprog"
-	"github.com/portto/solana-go-sdk/types"
+	"github.com/CoinSummer/solana-go-sdk/client"
+	"github.com/CoinSummer/solana-go-sdk/common"
+	"github.com/CoinSummer/solana-go-sdk/sysprog"
+	"github.com/CoinSummer/solana-go-sdk/types"
 )
 
 func main() {
