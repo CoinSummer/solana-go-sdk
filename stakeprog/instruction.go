@@ -1,8 +1,8 @@
 package stakeprog
 
 import (
-	"github.com/portto/solana-go-sdk/common"
-	"github.com/portto/solana-go-sdk/types"
+	"github.com/CoinSummer/solana-go-sdk/common"
+	"github.com/CoinSummer/solana-go-sdk/types"
 )
 
 const AccountSize uint64 = 200

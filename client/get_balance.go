@@ -39,6 +39,7 @@ type tokenAccountBalance struct {
 }
 
 // solana链的非 sol 代币的余额
+// 该地址为主账户地址对应的 token 的账户地址，需要做区分
 func (s *Client) GetTokenAccountBalance(base58Addr string) (float64, error) {
 	var res tokenAccountBalance
 	err := s.request("getTokenAccountBalance", []interface{}{base58Addr}, &res)

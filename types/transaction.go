@@ -6,7 +6,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/portto/solana-go-sdk/common"
+	"github.com/CoinSummer/solana-go-sdk/common"
 )
 
 type Signature []byte
