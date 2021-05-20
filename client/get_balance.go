@@ -2,7 +2,7 @@ package client
 
 import "errors"
 
-// sol 链的 sol 余额
+// GetBalance sol 链的 sol 余额
 func (s *Client) GetBalance(base58Addr string) (uint64, error) {
 	res := struct {
 		GeneralResponse
@@ -21,34 +21,33 @@ func (s *Client) GetBalance(base58Addr string) (uint64, error) {
 	return res.Result.Value, nil
 }
 
-type tokenAccountBalance struct {
-	JsonRPC string `json:"jsonrpc"`
-	Result  struct {
+type tokenAccountBalanceResp struct {
+	GeneralResponse
+	Result struct {
 		Context struct {
 			Slot uint64 `json:"slot"`
 		} `json:"context"`
-		Value struct {
-			Amount         string  `json:"amount"`
-			Decimals       uint8   `json:"decimals"`
-			UiAmount       float64 `json:"uiAmount"`
-			UiAmountString string  `json:"uiAmountString"`
-		} `json:"value"`
+		Value BalanceValue `json:"value"`
 	} `json:"result"`
-	ID uint64 `json:"id"`
-	Error   ErrorResponse `json:"error"`
 }
 
-// solana链的非 sol 代币的余额
+type BalanceValue struct {
+	Amount         string  `json:"amount"`
+	Decimals       uint8   `json:"decimals"`
+	UiAmount       float64 `json:"uiAmount"`
+	UiAmountString string  `json:"uiAmountString"`
+}
+
+// GetTokenAccountBalance solana链的非 sol 代币的余额
 // 该地址为主账户地址对应的 token 的账户地址，需要做区分
-func (s *Client) GetTokenAccountBalance(base58Addr string) (float64, error) {
-	var res tokenAccountBalance
+func (s *Client) GetTokenAccountBalance(base58Addr string) (*BalanceValue, error) {
+	var res tokenAccountBalanceResp
 	err := s.request("getTokenAccountBalance", []interface{}{base58Addr}, &res)
 	if err != nil {
-		return 0, err
+		return nil, err
 	}
-
 	if res.Error != (ErrorResponse{}) {
-		return 0, errors.New(res.Error.Message)
+		return nil, errors.New(res.Error.Message)
 	}
-	return res.Result.Value.UiAmount, nil
+	return &res.Result.Value, nil
 }
